@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+            <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+		
+        <link rel="stylesheet" href="app.css" type="text/css" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+        <script src="https://rawgithub.com/gsklee/ngStorage/master/ngStorage.js"></script>
+        <script src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"> </script>
+        <script src="ya-map-2.0.min.js"></script>
+        <script src="app.js"></script>
+        <script>
+var h_hght = 0; // высота шапки
+var h_mrg = 0;    // отступ когда шапка уже не видна
+     
+$(document).ready(function() {
+    $('.link').tooltip();
+});  
+$(function(){
+ 
+    var elem = $('#top_nav');
+    var top = $(this).scrollTop();
+     
+    if(top > h_hght){
+        elem.css('top', h_mrg);
+    }           
+     
+    $(window).scroll(function(){
+        top = $(this).scrollTop();
+         
+        if (top+h_mrg < h_hght) {
+            elem.css('top', (h_hght-top));
+        } else {
+            elem.css('top', h_mrg);
+        }
+    });
+ 
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+});
+</script>
+    </head>
+    <body>
+        <div class="wraper" ng-app="myApp" ng-controller="HeaderController">
+            <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">
+                    Яблоко
+                    <!-- <img alt="Brand" src="logo.jpg"> -->
+                  </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+                  <ul class="nav navbar-nav" id="top_nav">
+                    <li ng-class="{active: isActive('/')}"><a href="#" target="_self">Процесс обучения <span class="sr-only">(current)</span></a></li>
+                    <li ng-class="{active: isActive('/forms')}"><a href="#forms" target="_self">Формы обучения</a></li>
+                    <li ng-class="{active: isActive('/advantages')}"><a href="#advantages" target="_self">Преимущества</a></li>
+                    <li ng-class="{active: isActive('/comments')}"><a href="#comments" target="_self">Отзывы</a></li>
+                    <li ng-class="{active: isActive('/price')}"><a href="#price" target="_self">Стоимость</a></li>
+                    <li ng-class="{active: isActive('/contacts')}"><a href="#contacts" target="_self">Контакты</a></li>
+                  </ul>
+                  <a class="navbar-brand" href="#">+7 (812) 373 32 68</a>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+
+            <div id="example-1" class="container bgimg" scroll>
+                <div class="main">
+                    
+                </div>
+                <div class="sidebar">
+                    <div class="header-adv" style="padding-top: 80px;">ПОЛУЧИ УЛЁТНУЮ СПЕЦИАЛЬНОСТЬ СО СКОРОСТЬЮ СВЕТА
+                    </div>
+                    <div class="comments-adv" style="padding-top: 80px;">
+                        Дополнительная квалификация за 760 часов! Курс "Компьютерная графика и Web-design" ы Университете ИТМО
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <button class="btn btn-large btn-danger" value="Записаться сейчас">
+                                    <a href="#price" target="_self" style="color: white">Записаться сейчас</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="example-8" class="container" scroll>
+                 <img src="images/planets.png">
+
+				<button class="planet_button1" data-toggle="tooltip" data-placement="right" title="ЗАПИШИСЬ на курсы"><p class="numb"style="color: red">1.</p></button>
+                <button class="planet_button2" data-toggle="tooltip" data-placement="top" title="УЧИСЬ Очно или Дистанционно"><p class="numb"style="color: blue">2.</p></button>
+				<button class="planet_button3" data-toggle="tooltip" data-placement="bottom" title="ЗАЩИТИСЬ"><p class="numb">3.</p></button>        
+				<button class="planet_button4" data-toggle="tooltip" data-placement="left" title="ПОЛУЧИ ДИПЛОМ"><p class="numb"style="color: green">4.</p></button>
+		</div>
+            <div id="forms" >
+            </div>
+            <div id="example-2" class="container" scroll>
+            <img class="img-anim" src="images/sputnik.png">
+                <div class="box center">
+                    <h1>Выбери свою форму обучения</h1>
+                </div>
+
+				<div >
+					<div class="column">
+						<div class="box center">
+							<h1>Очная</h1>
+							Обучение в вечерние часы (18:30 - 21:50)
+						</div>
+					</div>
+					
+					<div class="column">
+						<div class="box center">
+							<h1>Дистанционная</h1>
+							По индивидуальному календарному плану
+						</div>
+					</div>
+
+					<div class="column">
+						<div class="box center">
+							<h1>Экстернат</h1>
+							Для лиц, владеющих материалом отдельных тем курса, допускается прохождение курса в режиме экстерната
+						</div>
+					</div>
+				</div>
+                <div class="sidebar">    
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Name Surname" ng-model="Model.name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Address" ng-model="Model.email">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Phone number" ng-model="Model.phone">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <input class="form-control btn btn-danger" value="Записаться сейчас" ng-click="submitForm(Model.name, Model.email, Model.phone)">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+			 <iframe style="color: transparent; background-color: transparent; border-color: transparent;" src="starwars.html" width="1200" height="800" align="center">
+				Ваш браузер не поддерживает плавающие фреймы!
+			 </iframe>
+			
+            <div id="advantages" >
+            </div>
+          
+</article>
+		
+            <div id="comments" >
+            </div>
+            <div id="example-4" class="container" scroll>
+                <div class="box center">
+                    <h1 class="">Почему выбирают этот курс?</h1>
+                </div>
+                <div class="main">
+                    <div class="comments-adv">
+                        <span class="glyphicon glyphicon-education btn-lg" aria-hidden="true"></span>
+                        Диплом престижного ВУЗа
+                    </div>
+                    <div class="comments-adv">
+                        <span class="glyphicon glyphicon-folder-open btn-lg" aria-hidden="true"></span>
+                        За время обучения формируется портфолио
+                        
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <div class="comments-adv">
+                        <span class="glyphicon glyphicon-calendar btn-lg" aria-hidden="true"></span>
+                        Гибкая форма обучения
+                    </div>
+                    <div class="comments-adv">
+                        <span class="glyphicon glyphicon-ok btn-lg" aria-hidden="true"></span>
+                        Востребованная творческая специальность
+                    </div>
+                </div>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#myCarousel" data-slide-to="1"></li>
+                      <li data-target="#myCarousel" data-slide-to="2"></li>
+                      <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                      <div class="item active">
+                        <img class="main-carousel" src="cos.jpg" alt="Chania">
+                        <div class="sidebar-carousel comment">
+                            Девять месяцев пролетели незаметно. Ведь некогда оглядываться, когда изучаешь
+                            что-то новое и увлекательно. Курсы помогли выразить подавляемое мной в угоду 
+                            "престижной" работе желание творить и обучили средствам воплощения этого желания в жизнь.
+                            Спасибо!
+                        </div>
+                      </div>
+
+                      <div class="item">
+                        <img class="main-carousel" src="cos.jpg" alt="Chania">
+                        <div class="sidebar-carousel comment">
+                            Девять месяцев пролетели незаметно. Ведь некогда оглядываться, когда изучаешь
+                            что-то новое и увлекательно. Курсы помогли выразить подавляемое мной в угоду 
+                            "престижной" работе желание творить и обучили средствам воплощения этого желания в жизнь.
+                            Спасибо!
+                        </div>
+                      </div>
+                    
+                      <div class="item">
+                        <img class="main-carousel" src="cosmos.jpg" alt="Flower">
+                        <div class="sidebar-carousel comment">
+                            Девять месяцев пролетели незаметно. Ведь некогда оглядываться, когда изучаешь
+                            что-то новое и увлекательно. Курсы помогли выразить подавляемое мной в угоду 
+                            "престижной" работе желание творить и обучили средствам воплощения этого желания в жизнь.
+                            Спасибо!
+                        </div>
+                      </div>
+
+                      <div class="item">
+                        <img class="main-carousel" src="cosmos.jpg" alt="Flower">
+                        <div class="sidebar-carousel comment">
+                            Девять месяцев пролетели незаметно. Ведь некогда оглядываться, когда изучаешь
+                            что-то новое и увлекательно. Курсы помогли выразить подавляемое мной в угоду 
+                            "престижной" работе желание творить и обучили средствам воплощения этого желания в жизнь.
+                            Спасибо!
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bgimg-contacts">
+            <div id="example-5" class="container" scroll>
+                <div id="price"></div>
+                <div class="box center">
+                    <h1>СКИДКА 50%</h1>
+                </div>
+
+                <div class="main">
+                    <div class="text-padding">
+                        <div class="price">
+                            Очная форма
+                        </div>
+
+                        <div class="price">
+                            Дистанционная форма
+                        </div>
+                    </div>
+
+                    <div class="register-now">
+                        <h1 class="register-now-h1">Запишитесь сейчас!</h1>
+                        <div class="price" ng-model="availableForms">
+                            Осталось {{Model.availableForms}} мест
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="text-padding">
+                        <div class="price">
+                            <span class="strikeout">170000</span> 85 000 &#8381
+                        </div>
+                        <div class="price">
+                            <span class="strikeout">130000</span> 65 000 &#8381
+                        </div>
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Name Surname" ng-model="Model.name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" ng-model="Model.email">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="phone" id="phone" tabindex="2" class="form-control" placeholder="Phone number" ng-model="Model.phone">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-danger" value="Записаться сейчас" ng-click="submitForm(Model.name, Model.email, Model.phone)">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+
+
+            <div id="example-6" class="container" scroll>
+                <div class="box center"> 
+                    <h1> Как нас найти: </h1>
+                </div>
+                <div class="main">
+                    <div class="myMap">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=9xnp066Inbkvk-x4H0UClv3-ctQ3DneB&width=500&height=400&lang=ru_RU&sourceType=constructor&scroll=true"></script>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="contact-info">
+                        <div class="bold-text">Кафедра компьютерного проектирования и дизайна </div>
+                        <div class="classical-text">Санкт-Петербургского нафионального исследовательского университета информационных технологий, механики и оптики (Университет ИТМО)</div>
+                        <div class="address">
+                            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                            Россия, 196135, Санкт-Петербург, ул. Гастелло 12, офис 312
+                        </div>
+                        <div class="phones">
+                            <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                            +7 (812) 373-32-68 c 11 до 18
+                        </div>
+                        <div class="email">
+                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                            do@limtu.ru
+                        </div>
+                    </div>
+                    <div id="contacts" ></div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </body>
+</html>

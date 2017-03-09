@@ -1,0 +1,329 @@
+/*html { 
+  background: url('cosmos.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
+
+@font-face{
+    font-family: "ALSSchlangesans";
+    src: url('fonts/ALSSchlangesans.otf')
+}
+@font-face{
+    font-family: "ALSSchlangesans-Bold";
+    src: url('fonts/ALSSchlangesans-Bold.otf')
+}
+body {
+     margin: 0;
+     background: url('cosm.jpg');
+     background-size: 1440px 800px;
+     background-repeat: repeat;
+     display: compact;
+     font: "ALSSchlangesans";
+}
+
+.container {
+    position: 
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+	font-size: 18px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+.box {
+	font-family: "ALSSchlangesans-Bold";
+	font-size: 18pt;
+	color: red;
+    padding: 10px;
+    display: block;
+    margin-top: 20px;
+}
+
+h1 {
+	font-size: 30pt;
+	color: white;
+}
+
+#example-1 {
+	width: 100%;
+	height: 1000px;
+    /*background-color: #FC6E51;*/
+}
+
+#example-2 {
+	height: 1500px;
+    /*background-color: #FFF444;	*/
+}
+
+#example-3 {
+	height: 1050px;
+    /*background-color: #F4F4F4;*/
+}
+
+#example-4 {
+	height: 1000px;
+    /*background-color: #F4F4F4;*/
+}
+
+#example-5 {
+	height: 800px;
+    /*background-color: #F4F4F4;*/
+}
+
+#example-6 {
+	height: 800px;
+    /*background-color: #F4F4F4;*/
+}
+
+#example-7 {
+	height: 1000px;
+    /*background-color: #F4F4F4;*/
+}
+
+#example-8 {
+	height: 800px;
+    /*background-color: #F4F4F4;*/
+}
+
+/*.fadein .box {
+    display: none;
+}*/
+
+.center {
+    /*position: relative;
+    top: 50%;*/
+    /*transform: translateY(-50%);*/
+    text-align: center;
+    color: white;
+}
+
+ya-map {
+  display: block;
+  width: 400px;
+  height: 500px;
+}
+
+.wrapper {
+	width: 100%;
+}
+
+.myMap {
+    /*margin-top: 900px;*/
+    /*margin-left: 700px;*/
+  	max-width: 100%;
+}
+
+.contact-info {
+	position: relative;
+	width: 500px;
+	height: 400px;
+	font-family: "ALSSchlangesans";
+	font-size: 18pt;
+	color: dark-grey;
+    box-shadow: 0 0 20px black;	
+    background: white;	
+    padding: 20px;
+}
+
+.bold-text {
+	font-family: "ALSSchlangesans-Bold";
+}
+
+.wraper {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.main {
+	float: left;
+	width: 600px;
+	height: 400px;
+	/*padding: 10px;*/
+}
+
+.sidebar {
+	float: right;
+	width: 500px;
+	height: 400px;
+    /*margin-top: 500px;	*/
+	/*padding: 10px;*/
+}
+
+.form-side {
+	float: right;
+	width: 400px;
+	height: 400px;
+    /*margin-top: 500px;	*/
+	/*padding: 10px;*/
+}
+.strikeout {
+  font-size: 18pt;
+  line-height: 5pt;
+  position: relative;
+}
+.strikeout::after {
+  border-bottom: 0.125em solid red;
+  content: "";
+  left: 0;
+  margin-top: calc(0.125em / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+.price {
+	font-family: "ALSSchlangesans";
+	font-size: 28pt;
+	color: white;
+}
+.comments-adv {
+	font-family: "ALSSchlangesans";
+	font-size: 28pt;
+	color: white;
+}
+.header-adv {
+	font-family: "ALSSchlangesans-Bold";
+	font-size: 28pt;
+	color: white;
+}
+.numb{font-family: "ALSSchlangesans-Bold";
+	font-size: 36pt;
+	color: white;
+}
+
+.main .price {
+	padding-left: 20px;
+}
+
+.sidebar .price {
+	padding-left: 100px;
+}
+
+.text-padding {
+	padding-bottom: 200px;
+}
+
+.register-now-h1 {
+	font-family: "ALSSchlangesans-Bold";
+	font-size: 50pt;
+	color: white;
+}
+
+.item {
+	width: 700px;
+	height: 500 px;
+	margin-left: 300px;
+}
+.main-carousel {
+	float: left;
+	width: 300px;
+	height: 400px;
+}
+.sidebar-carousel {
+	font-family: "ALSSchlangesans";
+	float: left;
+	width: 300px;
+	height: 400px;
+	color: white;
+	padding: 20px;
+}
+.glyphicon.glyphicon-education , .glyphicon.glyphicon-calendar, .glyphicon.glyphicon-folder-open, .glyphicon.glyphicon-ok{
+    font-size: 55px;
+}
+.bgimg {
+    background-image: url('cosmonavt.jpg');
+}
+.bgimg-contacts {
+	background-image: url('rocket.png');
+	background-size: 100%;
+}
+.bgimg-prog {
+	background-image: url('landing_slice-04.jpg');
+	background-size: 100%;
+}
+.bgimg-form {
+	background-image: url('images/sputnik.png');
+	/*background-image: url('cosmonavt.jpg');*/
+	background-size: 100%;
+}
+.column {
+  font-family: "ALSSchlangesans";
+  color: white;
+  float:left;
+  width:350px;
+  height:500px;
+}
+.img-anim {
+	position: relative;
+    -webkit-animation-name: mymove;  /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 50s;  /* Chrome, Safari, Opera */
+	-webkit-transform: translate3d(0, 0, 0);
+    animation-name: mymove;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	-o-animation-iteration-count: infinite;
+}
+@-webkit-keyframes mymove {
+    from {left: -600px;}
+    to {left: 1400px;}
+}
+
+@keyframes mymove {
+    from {left: -600px;}
+    to {left: 1400px;}
+}
+
+.planet_button1 {
+color: transparent; background-color: transparent; border-color: transparent;
+  margin: 50px;
+  width: 170px;
+  height: 170px;
+  background: url('images/back.png');
+  cursor: pointer;
+  border-radius: 70%;
+  position:relative; 
+  overflow:hidden;
+  bottom: 560px
+}
+.planet_button2 {
+	color: transparent; background-color: transparent; border-color: transparent;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  background: url('images/back.png');
+  cursor: pointer;
+  border-radius: 70%;
+  position:relative; 
+  bottom: 380px;
+  overflow:hidden
+}
+.planet_button3 {
+	color: transparent; background-color: transparent; border-color: transparent;
+  margin: 80px;
+  width: 220px;
+  height: 220px;
+  background: url('images/back.png');
+   cursor: pointer;
+  border-radius: 70%;
+  position:relative; 
+  bottom: 620px;
+  overflow:hidden
+}
+.planet_button4 {
+color: transparent; background-color: transparent; border-color: transparent;
+  margin:-20px;
+  width: 180px;
+  height: 180px;
+  background: url('images/back.png');
+  cursor: pointer;
+  border-radius: 50%;
+  position:relative; 
+  bottom: 330px;
+  overflow:hidden
+}
